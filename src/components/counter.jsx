@@ -20,6 +20,7 @@ class Counter extends Component {
 
         return (
         <Fragment>
+            { this.state.tags.length === 0 && 'please create a new tag!'  }
        {this.renderTags()}
         </Fragment>);
     }
