@@ -1,6 +1,10 @@
 import React, { Component, Fragment } from 'react';
 
 class Counter extends Component {
+    constructor () {
+        super();
+        this.handleIncrement = this.handleIncrement.bind(this);
+    }
     state = {
         count:0,
         tags:[]
@@ -14,12 +18,16 @@ class Counter extends Component {
     </ul>
        )
    }
+   handleIncrement(){
+       console.log('Increment Clicked',this);
+   }
 
     render() { 
     
 
         return (
         <Fragment>
+            <button onClick={this.handleIncrement} className='btn btn-primary btn-sm'>Increment</button>
             { this.state.tags.length === 0 && 'please create a new tag!'  }
        {this.renderTags()}
         </Fragment>);
