@@ -18,9 +18,13 @@ class Counter extends Component {
     </ul>
        )
    }
-   handleIncrement = () =>{
+   handleIncrement = (product) =>{
+       console.log(product);
 this.setState({ count: this.state.count + 1 })
 };
+doHandleIncrement = () =>{
+    this.handleIncrement({ id:1 });
+}
 
     render() { 
     
@@ -28,7 +32,7 @@ this.setState({ count: this.state.count + 1 })
         return (
         <Fragment>
             <span className='badge-primary m-3'>{this.state.count}</span>
-            <button onClick={this.handleIncrement} className='btn btn-primary btn-sm'>Increment</button>
+            <button onClick={ ()=> this.handleIncrement({ id: 1 }) } className='btn btn-primary btn-sm'>Increment</button>
             { this.state.tags.length === 0 && 'please create a new tag!'  }
        {this.renderTags()}
         </Fragment>);
