@@ -3,6 +3,7 @@ import React, { Component, Fragment } from 'react';
 class Counter extends Component {
     state = {
         count:0,
+        tags:['tag1','tag2','tag3']
         };
     styles = {
         fontSize:10,
@@ -16,6 +17,9 @@ class Counter extends Component {
         <Fragment>
             <span style={this.styles} className={this.getBadgeClasses()}> {this.formatCount()} </span>
         <button className='btn btn-secondary btn-sm'>Increment</button>
+        <ul>
+            {this.state.tags.map(tag=>(<li>{ tag }</li>))}
+        </ul>
         </Fragment>);
     }
 
