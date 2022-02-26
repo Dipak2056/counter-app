@@ -1,10 +1,10 @@
 import React, { Component, Fragment } from 'react';
 
 class Counter extends Component {
-    constructor () {
-        super();
-        this.handleIncrement = this.handleIncrement.bind(this);
-    }
+    // constructor () {
+    //     super();
+    //     this.handleIncrement = this.handleIncrement.bind(this);
+    // }
     state = {
         count:0,
         tags:[]
@@ -18,9 +18,9 @@ class Counter extends Component {
     </ul>
        )
    }
-   handleIncrement(){
+   handleIncrement = () =>{
        console.log('Increment Clicked',this);
-   }
+   };
 
     render() { 
     
