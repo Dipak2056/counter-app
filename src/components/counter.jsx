@@ -19,14 +19,15 @@ class Counter extends Component {
        )
    }
    handleIncrement = () =>{
-       console.log('Increment Clicked',this);
-   };
+this.setState({ count: this.state.count + 1 })
+};
 
     render() { 
     
 
         return (
         <Fragment>
+            <span className='badge-primary m-3'>{this.state.count}</span>
             <button onClick={this.handleIncrement} className='btn btn-primary btn-sm'>Increment</button>
             { this.state.tags.length === 0 && 'please create a new tag!'  }
        {this.renderTags()}
